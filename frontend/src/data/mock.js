@@ -89,5 +89,5 @@ export const socials = [
   { label: "Portfolio Repo", href: "https://github.com/gumidellia/portfolio" },
   { label: "Live Site", href: "https://gumidellia.github.io/portfolio" },
   { label: "Email", href: "mailto:gumidellia@gmail.com" },
-  { label: "LinkedIn", href: "#" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/aryan-gumidelli" },
 ];
