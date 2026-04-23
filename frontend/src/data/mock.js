@@ -1,4 +1,5 @@
 // Mock data for the portfolio website (frontend-only phase)
+import profileImg from "../assets/profile.png";
 
 export const profile = {
   name: "Aryan Gumidelli",
@@ -10,6 +11,8 @@ export const profile = {
   location: "Hyderabad, India",
   availability: "Open to Summer 2026 Internships",
   status: "Available",
+  // To change the profile picture, replace /app/frontend/src/assets/profile.png
+  photo: profileImg,
 };
 
 export const about = {
@@ -27,8 +30,8 @@ export const researchInterests = [
 
 export const personalDetails = [
   { k: "Name", v: "Aryan Gumidelli" },
-  { k: "Phone", v: "+91 XXXXXXXXXX" },
-  { k: "Personal Email", v: "aryangumidelli@gmail.com" },
+  { k: "Phone", v: "+91 6300104532" },
+  { k: "Personal Email", v: "gumidellia@gmail.com" },
   { k: "College Email", v: "se23umcs006@mahindrauniversity.edu" },
   { k: "University", v: "Mahindra University" },
   { k: "Degree", v: "B.Tech in Computer Science" },
@@ -78,6 +81,6 @@ export const projects = [
 
 export const socials = [
   { label: "GitHub", href: "https://github.com/yourusername" },
-  { label: "Email", href: "mailto:aryangumidelli@gmail.com" },
+  { label: "Email", href: "mailto:gumidellia@gmail.com" },
   { label: "LinkedIn", href: "#" },
 ];

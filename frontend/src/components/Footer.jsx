@@ -16,9 +16,9 @@ const Footer = () => {
           </h3>
           <a
             className="footer__mail"
-            href="mailto:aryangumidelli@gmail.com"
+            href="mailto:gumidellia@gmail.com"
           >
-            aryangumidelli@gmail.com
+            gumidellia@gmail.com
             <ArrowUpRight size={18} strokeWidth={1.6} />
           </a>
         </div>
@@ -29,8 +29,8 @@ const Footer = () => {
             <ul>
               <li>
                 <Mail size={14} strokeWidth={1.6} />
-                <a href="mailto:aryangumidelli@gmail.com">
-                  aryangumidelli@gmail.com
+                <a href="mailto:gumidellia@gmail.com">
+                  gumidellia@gmail.com
                 </a>
               </li>
               <li>
@@ -51,7 +51,7 @@ const Footer = () => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/projects">Projects</Link></li>
-              <li><a href="mailto:aryangumidelli@gmail.com">Contact</a></li>
+              <li><a href="mailto:gumidellia@gmail.com">Contact</a></li>
             </ul>
           </div>
 

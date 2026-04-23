@@ -72,38 +72,25 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="hero__card rise-3">
-            <div className="hero__card-head">
-              <div className="hero__avatar" aria-label="Profile">
-                <span className="serif">{profile.initials}</span>
+          <div className="hero__portrait rise-3">
+            <div className="hero__portrait-frame">
+              <div className="hero__portrait-ring" aria-hidden="true"></div>
+              <div className="hero__portrait-inner">
+                {profile.photo ? (
+                  <img src={profile.photo} alt={profile.name} />
+                ) : (
+                  <span className="serif hero__portrait-initials">
+                    {profile.initials}
+                  </span>
+                )}
               </div>
-              <div>
-                <div className="hero__card-name serif">Aryan Gumidelli</div>
-                <div className="hero__card-sub mono">@aryangumidelli</div>
-              </div>
-              <span className="hero__badge">
-                <Sparkles size={12} strokeWidth={1.8} /> 2026
+              <span className="hero__portrait-badge">
+                <Sparkles size={12} strokeWidth={1.8} />
+                <span className="mono">Class of 2026</span>
               </span>
-            </div>
-            <div className="hero__card-body">
-              <div className="hero__stat">
-                <div className="mono hero__stat-k">focus</div>
-                <div className="hero__stat-v">{"AI \u00b7 Backend \u00b7 Data"}</div>
-              </div>
-              <div className="hero__stat">
-                <div className="mono hero__stat-k">stack</div>
-                <div className="hero__stat-v">{"Python \u00b7 React \u00b7 Node"}</div>
-              </div>
-              <div className="hero__stat">
-                <div className="mono hero__stat-k">learning</div>
-                <div className="hero__stat-v">Distributed systems</div>
-              </div>
-            </div>
-            <div className="hero__card-foot mono">
-              <span>status</span>
-              <span className="hero__card-status">
+              <span className="hero__portrait-status">
                 <span className="hero__dot hero__dot--green" />
-                {profile.status.toLowerCase()} for internships
+                <span className="mono">available</span>
               </span>
             </div>
           </div>
@@ -158,10 +145,10 @@ const Home = () => {
               or just to say hi {"\u2014"} here&apos;s the quickest way to find me.
             </p>
             <div className="details__actions">
-              <a className="btn btn-primary" href="mailto:aryangumidelli@gmail.com">
+              <a className="btn btn-primary" href="mailto:gumidellia@gmail.com">
                 <Mail size={16} strokeWidth={1.8} /> Email me
               </a>
-              <a className="btn btn-ghost" href="tel:+91">
+              <a className="btn btn-ghost" href="tel:+916300104532">
                 <Phone size={16} strokeWidth={1.8} /> Call
               </a>
             </div>

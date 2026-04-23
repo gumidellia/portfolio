@@ -45,7 +45,7 @@ const Navbar = () => {
           </NavLink>
           <a
             className="nav__cta"
-            href="mailto:aryangumidelli@gmail.com"
+            href="mailto:gumidellia@gmail.com"
             onClick={() => setOpen(false)}
           >
             Get in touch
