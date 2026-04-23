@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# Aryan Gumidelli — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive personal portfolio built with **React**, **React Router (HashRouter)**, and plain CSS.
 
-## Available Scripts
+- **Live site**: https://gumidellia.github.io/portfolio
+- **GitHub repo**: https://github.com/gumidellia/portfolio
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 19 + React Router (`HashRouter`)
+- `NavLink` for active nav highlighting
+- Plain CSS with CSS variables for theming
+- `lucide-react` for icons
+- Google Fonts: **Instrument Serif**, **Inter**, **JetBrains Mono**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project structure
 
-### `npm test`
+```
+frontend/
+├── public/
+│   └── index.html
+├── src/
+│   ├── App.js                 # HashRouter + routes
+│   ├── App.css                # Global tokens, buttons, sections
+│   ├── index.js
+│   ├── index.css
+│   ├── assets/
+│   │   └── profile.png        # Profile photo (swap this file to change)
+│   ├── components/
+│   │   ├── Navbar.jsx + .css  # NavLink, mobile menu
+│   │   └── Footer.jsx + .css  # Contact + social links
+│   ├── data/
+│   │   └── mock.js            # All portfolio content lives here
+│   └── pages/
+│       ├── Home.jsx + .css    # Hero, About, Interests, Skills, Details
+│       └── Projects.jsx + .css# Search + filter + project cards
+└── package.json
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run locally
 
-### `npm run build`
+```bash
+cd frontend
+yarn install
+yarn start
+# open http://localhost:3000
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Edit content
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Everything is centralised in **`src/data/mock.js`**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Name, title, tagline
+- About paragraph
+- Research interests
+- Personal details
+- Skills (Programming, Web, Tools)
+- Projects (title, description, tech, GitHub URL, year, role)
+- Social links + portfolio GitHub / live URLs
 
-### `npm run eject`
+To change the profile photo, just replace `src/assets/profile.png` with your image.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deploy to GitHub Pages
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The project is pre-configured. Here are the exact commands:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Create an empty repo
 
-## Learn More
+Go to https://github.com/new and create a repo named **`portfolio`** under the `gumidellia` account.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Push the code
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd frontend
+git init
+git add .
+git commit -m "Initial portfolio"
+git branch -M main
+git remote add origin https://github.com/gumidellia/portfolio.git
+git push -u origin main
+```
 
-### Code Splitting
+### 3. Deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd frontend
+yarn deploy
+```
 
-### Analyzing the Bundle Size
+This will run:
+1. `predeploy` → `yarn build` (produces `/build`)
+2. `deploy` → `gh-pages -d build` (pushes the build to a `gh-pages` branch)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. Enable Pages
 
-### Making a Progressive Web App
+1. On GitHub, open your repo → **Settings** → **Pages**
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**
+3. Pick branch **`gh-pages`** / folder **`/ (root)`** and **Save**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Your site will be live at:
 
-### Advanced Configuration
+> **https://gumidellia.github.io/portfolio**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Why HashRouter?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+GitHub Pages serves only static files with no server-side routing. Using `HashRouter` (URLs like `/#/projects`) makes direct-links and refresh work without 404s. `BrowserRouter` would require redirect hacks to behave correctly on GitHub Pages.
 
-### `npm run build` fails to minify
+## Configured fields
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In `frontend/package.json`:
+
+```json
+{
+  "homepage": "https://gumidellia.github.io/portfolio",
+  "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
+```
+
+---
+
+## Contact
+
+- Email: **gumidellia@gmail.com**
+- College: se23umcs006@mahindrauniversity.edu
+- Phone: **+91 6300104532**
+- Location: Hyderabad, India

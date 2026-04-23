@@ -11,6 +11,8 @@ import {
   Code2,
   Wrench,
   Globe2,
+  Github,
+  ExternalLink,
 } from "lucide-react";
 import {
   profile,
@@ -18,6 +20,7 @@ import {
   researchInterests,
   personalDetails,
   skills,
+  portfolioLinks,
 } from "../data/mock";
 import "./Home.css";
 
@@ -54,8 +57,21 @@ const Home = () => {
               <Link to="/projects" className="btn btn-primary">
                 View Projects <ArrowRight size={16} strokeWidth={1.8} />
               </Link>
-              <a href="#about" className="btn btn-ghost">
-                About me <ArrowUpRight size={16} strokeWidth={1.8} />
+              <a
+                href={portfolioLinks.github}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-ghost"
+              >
+                <Github size={16} strokeWidth={1.8} /> GitHub
+              </a>
+              <a
+                href={portfolioLinks.live}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-ghost"
+              >
+                <ExternalLink size={16} strokeWidth={1.8} /> Live
               </a>
             </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Github, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Github, MapPin, ArrowUpRight, Linkedin, Globe } from "lucide-react";
 import { profile, socials } from "../data/mock";
 import "./Footer.css";
 
@@ -61,8 +61,10 @@ const Footer = () => {
               {socials.map((s) => (
                 <li key={s.label}>
                   {s.label === "GitHub" && <Github size={14} strokeWidth={1.6} />}
+                  {s.label === "Portfolio Repo" && <Github size={14} strokeWidth={1.6} />}
+                  {s.label === "Live Site" && <Globe size={14} strokeWidth={1.6} />}
                   {s.label === "Email" && <Mail size={14} strokeWidth={1.6} />}
-                  {s.label === "LinkedIn" && <ArrowUpRight size={14} strokeWidth={1.6} />}
+                  {s.label === "LinkedIn" && <Linkedin size={14} strokeWidth={1.6} />}
                   <a href={s.href} target="_blank" rel="noreferrer">
                     {s.label}
                   </a>

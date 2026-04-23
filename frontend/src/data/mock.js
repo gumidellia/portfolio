@@ -62,7 +62,7 @@ export const projects = [
     description:
       "A system that collects alumni event data using RSS feeds, processes it with GPT-based analysis, and displays curated insights in an interactive dashboard.",
     tech: ["PHP", "MySQL", "GPT API", "RSS Parsing"],
-    github: "https://github.com/yourusername/alumni-alert-dashboard",
+    github: "https://github.com/gumidellia/alumni-alert-dashboard",
     year: "2024",
     role: "Full-stack",
   },
@@ -73,14 +73,21 @@ export const projects = [
     description:
       "An AI-powered study assistant designed to help students revise concepts, generate summaries, and answer academic questions across subjects using NLP and lightweight ML models.",
     tech: ["Python", "NLP", "Machine Learning"],
-    github: "https://github.com/yourusername/ai-study-assistant",
+    github: "https://github.com/gumidellia/ai-study-assistant",
     year: "2024",
     role: "Solo build",
   },
 ];
 
+export const portfolioLinks = {
+  github: "https://github.com/gumidellia/portfolio",
+  live: "https://gumidellia.github.io/portfolio",
+};
+
 export const socials = [
-  { label: "GitHub", href: "https://github.com/yourusername" },
+  { label: "GitHub", href: "https://github.com/gumidellia" },
+  { label: "Portfolio Repo", href: "https://github.com/gumidellia/portfolio" },
+  { label: "Live Site", href: "https://gumidellia.github.io/portfolio" },
   { label: "Email", href: "mailto:gumidellia@gmail.com" },
   { label: "LinkedIn", href: "#" },
 ];
